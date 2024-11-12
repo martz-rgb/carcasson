@@ -2,5 +2,5 @@ package logic
 
 type Meeple struct {
 	Player   int
-	Position TilePosition
+	Position Position // 5x5 dot?
 }

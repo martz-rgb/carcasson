@@ -9,15 +9,17 @@ type Field struct {
 	DownLeft, RightUp Position
 	Cards             map[Position]Card
 
-	Meeple map[Position]Meeple
+	Meeples map[Position]Meeple
 }
 
 func (f *Field) AddTile(pos Position, card Card)
 
-func (f *Field) AddMeeple(pos Position, meeple Meeple)
+func (f *Field) AddTileWithMeeple(pos Position, card Card, meeple Meeple)
 
-func (f *Field) IsPossible(tile TileID) bool
+func (f *Field) addTile()
+
+func (f *Field) PossibleSlots(tile TileID) map[Position][]Rotation
 
 func (f *Field) IsCorrect(pos Position, card Card) bool
 
-func (f *Field) Score()
+func (f *Field) Scores()
